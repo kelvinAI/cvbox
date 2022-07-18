@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name="cvbox",
-      version="0.0.4",
+      version="0.0.5",
       author="Kelvin Kong",
       author_email="kelvin86@gmail.com",
       description="A set of reusable tools for computer vision or any deep learning projects.",
