@@ -13,7 +13,7 @@ pip install cvbox
 ```python
 from cvbox.search import listfiles, listfiles_gen
 
-dir_to_list = "/path/to/project"
+dir_to_list = "/path/to/folder/to/search"
 
 # Store all found files in an array
 files = listfiles(dir_to_list)
@@ -46,10 +46,10 @@ for f in listfiles_gen(dir_to_list):
     print(f)
 ```
 
-## File IO functions
-### Exporting python pickle objects and restoring state from files  
+## File IO functions - Exporting object state to/from files
+### Exporting python objects to pickle binary files
 ```python
-from cvbox.fileio import save_json, load_json, save_pkl, load_pkl
+from cvbox.fileio import save_pkl, load_pkl
 
 ### Quickly serialize/export python objects (can be arrays, dicts, etc) into
 ### files that can be re-used again (object must be pickle-able)
@@ -63,6 +63,7 @@ print(arr_loaded) # [1, 2, 3, 4, 5]
 
 ### Exporting dictionary objects into JSON text files
 ```python
+from cvbox.fileio import save_json, load_json
 dic = [ {"category":"Car","movement": lambda :  "Drive" },
       {"category":"Plane","movement": lambda :  "Fly" }]
 save_json("json_output.txt", dic) # Dictionary object is serialized into txt
